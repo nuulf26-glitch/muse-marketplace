@@ -1,0 +1,33 @@
+services:
+  - type: web
+    name: muse-talent-marketplace
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/meta
+    disk:
+      name: muse-data
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: MUSE_DEMO_MODE
+        value: "0"
+      - key: MUSE_DATA_DIR
+        value: /var/data
+      - key: MUSE_DB
+        value: /var/data/muse.db
+      - key: MUSE_UPLOADS_DIR
+        value: /var/data/uploads
+      - key: MUSE_SECURE_COOKIES
+        value: "1"
+      - key: MUSE_BOOTSTRAP_ADMIN_EMAIL
+        sync: false
+      - key: MUSE_BOOTSTRAP_ADMIN_PASSWORD
+        sync: false
+      - key: MUSE_BOOTSTRAP_ADMIN_NAME
+        value: MUSE Admin
+      - key: MUSE_PUBLIC_URL
+        sync: false
+      - key: RESEND_API_KEY
+        sync: false
+      - key: MUSE_EMAIL_FROM
+        sync: false
