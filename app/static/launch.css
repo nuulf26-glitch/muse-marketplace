@@ -1,0 +1,23 @@
+.profilecard .actions {
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.profilecard .actions button {
+  white-space: nowrap;
+}
+
+@media (max-width: 650px) {
+  .profilecard .actions {
+    justify-content: flex-start;
+  }
+
+  .table .tr > :nth-child(3) {
+    display: none;
+  }
+
+  .table .tr > :nth-child(4) {
+    display: flex;
+    grid-column: 1 / -1;
+  }
+}
